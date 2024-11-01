@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SCENES/Parcial.unity
+    guid: c5f65ba8a23b0834eb128fabac5277b0
   m_configObjects: {}

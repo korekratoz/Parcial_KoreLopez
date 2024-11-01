@@ -21,7 +21,8 @@ public class MovimientoNave : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = transform.rotation * new Vector3(Mathf.Clamp(HorizontalMove(), -110, 100), 0, 0) * ActualSpeed();
+        rb.velocity = transform.rotation * new Vector3(HorizontalMove(), 0, 0) * ActualSpeed();
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -75, 75), 0, 0);
     }
 
     public float HorizontalMove()

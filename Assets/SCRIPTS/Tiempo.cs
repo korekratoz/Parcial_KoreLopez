@@ -12,10 +12,10 @@ public class Tiempo : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Contador());
+        StartCoroutine(Tempo());
     }
 
-    IEnumerator Contador()
+    IEnumerator Tempo()
     {
         WaitForSeconds tiempo = new WaitForSeconds(1);
 

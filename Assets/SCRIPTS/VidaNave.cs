@@ -2,20 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VidaNave : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] int vida;
+    public void DañoRecibido(int daño)
     {
-        if (gameObject.CompareTag("Enemigo"))
-            Destroy(this.gameObject);
-        StartCoroutine(Finalizar());
-    }
+        vida -= daño;
 
-    IEnumerator Finalizar()
-    {
-        yield return new WaitForSeconds(5);
-        Environment.Exit(0);
+        if (vida <= 0)
+        {
+            Destruir();
+        }
+
+        void Destruir()
+        {
+            Destroy(this.gameObject);
+
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<Tiempo>().StopAllCoroutines();
+            
+        }
+
     }
 
 }

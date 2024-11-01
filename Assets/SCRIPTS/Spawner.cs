@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] Transform asteroide;
     [SerializeField] Vector3 spawnPoint;
     [SerializeField] int tiempoAparicion;
-    [SerializeField] float rangoX;
+    private float rangoX;
 
     private void Start()
     {
@@ -25,8 +25,8 @@ public class Spawner : MonoBehaviour
 
     void InvocarAsteroide()
     {
-        rangoX = Random.Range(-100, 100);
-        spawnPoint = new Vector3(rangoX, 3.5f, 130);
+        rangoX = Random.Range(-75, 75);
+        spawnPoint = new Vector3(rangoX, 170, -2.5f);
         Instantiate(asteroide,spawnPoint, asteroide.rotation);
 
     }
